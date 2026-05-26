@@ -4,14 +4,14 @@ const OrderSchema = new mongoose.Schema({
     orderId: { 
         type: String, 
         required: true, 
-        unique: true 
+        unique: true
     },
     customerName: { 
         type: String, 
         required: true 
     },
     items: { 
-        type: [String], 
+        type: [String],
         required: true 
     },
     totalPrice: { 
@@ -20,12 +20,14 @@ const OrderSchema = new mongoose.Schema({
     },
     status: { 
         type: String, 
-        default: 'PROCESSING' 
+        default: 'Đang chuẩn bị'
     },
     createdAt: { 
         type: Date, 
         default: Date.now 
     }
+}, {
+    versionKey: false 
 });
 
 module.exports = mongoose.model('Order', OrderSchema);
